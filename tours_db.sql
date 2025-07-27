@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS tours_db;
+USE tours_db;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  password VARCHAR(255),
+  role ENUM('user', 'admin') DEFAULT 'user',
+  profile_pic VARCHAR(255) DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
